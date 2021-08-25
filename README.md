@@ -3,7 +3,7 @@
 1. 이차원 이징모델
   Metropolis algorithm 사용.  
   로컬계산만 이용해서 transition probability p(-dE/t)를 구한다.  
-  Order parameter $m = < s >$ 를 계산하여 paramagnetism -> ferromanetism phase transition 을 볼 수 있다.  
+  Order parameter m = < s > 를 계산하여 paramagnetism -> ferromanetism phase transition 을 볼 수 있다.  
   <조금 더 구체적 분석 필요>  
   
 2. 연속시간 무작위걸음  
