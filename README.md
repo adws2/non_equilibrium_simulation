@@ -1,24 +1,35 @@
-통계물리학 시뮬레이션,
+# 통계물리학 시뮬레이션,
 
-1. 이차원 이징모델
-  Metropolis algorithm 사용.  
-  로컬계산만 이용해서 transition probability p(-dE/t)를 구한다.  
-  Order parameter m = < s > 를 계산하여 paramagnetism -> ferromanetism phase transition 을 볼 수 있다.  
-  <조금 더 구체적 분석 필요>  
+### 1. 2D Ising model using Metropolis algorithm[1]  
+1. Calculate transition probability p(-dE/t)  
+2. Obtain spin configuration samples.  
+3. Calculate the magnetization m, to find phase transition.  
+- The magnetization m of the 2D Ising model  
+![magnetization](2D Ising model/save/magnetization.svg)
+
   
-2. 연속시간 무작위걸음  
-  time distribution function 을 input 으로 받고, time 마다 무작위 걸음을 한다.  
-  <harmonic potential 경우 기존 답과 틀리다 -> 수정필>  
-    
-3. 모래쌓기모델  
-  2차원 격자위에 모래알을 한 알씩 떨어뜨린다.  
-  모래알이 같은 지점에 4알이 될때, avalanche 가 일어 난다.  
-  avalanche 규모의 분포를 보면 power law.  
-  <avalanche distribution log binning 추가필요>  
+### 2. CTRW(Continuous-time random walk)  
+INPUT : time/step-lengths distribution / OUTPUT : random walk trajectory  
+If step-lengths distribution is Levy distribution, position random variables are distributed power-law.  
+- Histogram of Levy flight
+![Levyflight](CTRW/save/Levy.svg)
+
+
+### 3. Sandpile model[2]
+1. Drop a grain of sand onto a random position of two-dimensional lattice.
+2. Repeat 1 until there are four sand in the same position.
+3. The four grains of sand collapse and pass them to the surrounding area. 
+- Result : Avalanche size distirbution is the power-law.  
   
-4. 스몰월드 네트워크모델  
-  regular network 를 만들고 rewiring 을 한다.  
+### 4. Small world netwrok[3]  
+- Create regular network and rewire a random node.
   rewiring = 0  : regular (ordered : clustering coefficent is large and shortest path length is large too)  
   rewiring = 1  : random (disordered : '' is small and '' is small too)  
   Therefore, there is a phase transition.  
   In the context of network, small world network is defined that clustering coefficient is large but shortest path length is small.  
+![smallworld](Smallworld network/save/clustering.svg)
+
+### Reference
+- [1] M.  E.  J.  Newman  and  G.  T.  Barkema. Monte Carlo methods in statistical physics. Clarendon Press, Oxford, 1999.
+- [2] Christensen, Kim, and Nicholas R. Moloney. Complexity and criticality. World Scientific Publishing Company, 2005.
+- [3] Newman, Mark EJ, Cristopher Moore, and Duncan J. Watts. Mean-field solution of the small-world network model. Physical Review Letters 84.14, 2000.
