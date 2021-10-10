@@ -25,7 +25,7 @@ If step-lengths distribution is Levy distribution, position random variables are
 ### 4. Small world netwrok [3]  
 - Create regular network and rewire a random node.
   rewiring = 0  : regular (ordered : clustering coefficent is large and shortest path length is large too)  
-  rewiring = 1  : random (disordered : '' is small and '' is small too)  
+  rewiring = 1  : random (disordered : clustering coefficent is small and shortest path length is small too)  
   Therefore, there is a phase transition.  
   In the context of network, small world network is defined that clustering coefficient is large but shortest path length is small.  
 <img src='Smallworld network/save/clustering.svg' width = '300'>  
